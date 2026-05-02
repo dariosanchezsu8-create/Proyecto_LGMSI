@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--DARIO SANCHEZ SUAREZ-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--Web para móviles y tablets--->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <!--Llamada al CSS--->
+    <link rel="stylesheet" type="text/css" href="CSS_LGMSI.css">
+    </head>
+      <body>
+        <!--CABECERA-->
+          <header>
+              <h1><i>SHAPESYNC</i></h1>
+                <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/imc-icon-svg-download-png-3595142.png" alt="Logo Página Web" width="100" height="100"></img>
+                <select id="menuIMC" name="menuIMC" class="menu">
+                    <option value=" " disabled hidden selected>Menu</option><!--Se oculta esta opcion para que no aparezca en el menú-->
+                    <option value="op1">Salud</option>
+                    <option value="op2">Comida</option>
+                    <option value="op3">Deporte</option>
+                    <option value="op4">Entorno social</option>
+               </select>
+          </header>
+          
+          <!--PRINCIPAL-->
+          <main>
+                <div>
+                    <h2>GALERIA DEL DEPORTE </h2>
+                      <img class="cambio" id="principal" src="https://img.freepik.com/vector-gratis/diseno-fuente-momentos-divertidos-ninos-felices_1308-42471.jpg?semt=ais_hybrid&w=740&q=80" alt="Imagen Diversión" width="120" height="100"></img>
+                      <div>
+                            <img class="cambio" id="Foto1" src="https://img.freepik.com/vector-gratis/grupo-personal-medico-que-lleva-iconos-relacionados-salud_53876-43071.jpg?semt=ais_hybrid&w=740&q=80" alt="Imagen Salud" height="70" width="80"></img>
+                            <img class="cambio"  id="Foto2"src="https://img.freepik.com/vector-gratis/concepto-equipamiento-deportivo_1284-13034.jpg?semt=ais_hybrid&w=740&q=80" alt="Imagen deporte" height="70" width="75"></img>
+                            <img class="cambio" id="Foto3" src="https://marketplace.canva.com/Yq-3U/MAG5uXYq-3U/1/tl/canva-healthy-prepared-meals-in-glass-containers-MAG5uXYq-3U.jpg" alt="Imagen Comida" height="70" width="100"></img>
+                     </div>
+                   </div>
+               <div>
+                      <h2>CALCULO IMC | SHAPESYNC</h2>
+                      <label for="peso"><input type="text" id="peso" name="peso" placeholder="En Kg"></input></label>
+                     <label for ="altura"><input  type="text"id="altura" name="altura" placeholder="En metros"></input></label>
+                      <button onclick ="calcularIMC()">Calcular IMC</button><!-En el click del botón se ejecuta la función--->
+                     <p id="resultado"></p>
+           </div>
+                 <div>
+                       <h2>REGISTRO</h2>
+                        <label for="nombre"><input  type="text"id="nombre" name="nombre" placeholder="Tu nombre"></input></label>
+                        <label for ="email"><input  type="text"id="email" name="email" placeholder="Email"></input></label>
+                        <button  type="button"onclick="Enviar()">Enviar</button><!--MIRAR EL ONCLICK HAY QUE SUSTITUIR POR ADDEVENTLISTENER -->
+                        <!--Al hacer click en enviar se llama a la funcion enviar, donde lanzara excepcion si es necesario o imprime un texto
+                        . Todo en forma de alerta-->
+                  </div>
+        </main>
+        
+      <!--PIE DE PAGINA-->
+          <footer>
+                   <p>© 2026 Calculadora IMC - Darío Sánchez Suárez</p>
+                    <p>Todos los derechos reservados</p>
+                   <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/imc-icon-svg-download-png-3595142.png" alt="Logo Página Web" width="80" height="80"></img>
+         </footer>
+       <!--Llamada al Js-->
+       <script src="JS_LGMSI.js"></script>
+     </body>
+   </html>
+

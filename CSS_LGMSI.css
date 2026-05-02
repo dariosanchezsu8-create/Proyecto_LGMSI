@@ -1,0 +1,126 @@
+
+    /*  CABECERA */
+        header {
+            background-color:#2E7D32;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:10px;
+            flex-wrap: wrap;/* importante para el movil */
+        }
+    /*Titulo de la cabecera */
+        header h1 {
+           margin: 0;
+           font-size: 28px;
+           color: white;
+           font-family: sans-serif;
+           font-weight: bold;
+           padding:10px;
+      }
+    /*Logo de la página*/
+       img {
+           margin:20px;
+           max-width: 100%; /* responsive. Anchura máxima */
+      }
+    /*Menu desplegable*/
+        select {
+           padding: 3px;
+           border: 2px solid #2e7d32;
+           border-radius: 5px;
+           background-color: white;
+           cursor: pointer;
+           margin-left:auto;
+        }
+    /*Opciones del menu desplegable*/
+       select, option {
+           font-family: sans-serif;
+           font-size: 14px;
+       }
+    /*Titulo de cada sección*/
+        h2{
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 700; /* grosor letra*/
+            color: #111;
+            letter-spacing: 1px; /* espacio entre letras*/
+            padding-bottom:15px;
+            padding:10px;
+       }
+        
+    /*BLOQUE PRINCIPAL */
+    /* Contenedor principal*/
+        main {
+            text-align:center;
+            background-color:#F2F6FA;
+            padding:10px;
+        }
+    /*CSS a los contenedores div */
+        main div {
+            padding:10px;
+           background-color:#F2F6FA;
+       }
+    /*Pone un aumento de la imagen cuando se pasa el cursor por encima , sombra  y cursor */
+       .cambio {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+   /*Tamanio de la imagen cuando se agranda y sombra */
+        .cambio:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 3px rgba(0,0,0,0.3);
+       }
+    /*Entradas de la pagina web */
+        input {
+            border-radius:5px;
+            border: 2px solid #2e7d32;
+            margin-right:5px;
+            padding:3px 3px;
+            width: 200px;  /* Anchura del input */
+        }
+    /*Botones de la pagina web */
+        button {
+            padding: 5px 10px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;/* Letras en negrita*/
+            font-family: sans-serif
+        }
+        
+    /*PIE DE PAGINA */
+        footer {
+              border-top: 1px solid black;
+              text-align: center;
+              padding: 10px;
+              margin-top:10px;
+              background-color: #1B5E20;
+              color: white;
+        }
+    /*Texto del pie de página */
+        footer p {
+              padding:2px;
+              margin:2px;
+              font-family: sans-serif
+        }
+    /*RESPONSIVE */
+        @media (max-width: 600px) { /*Los siguientes estilos se aplicarán cuando la pantalla tenga una anchura max de 600 o menos  */
+            
+        header {
+              flex-direction: column; /*Elementos en forma de columna*/
+             text-align: center;/*Centra el texto del header*/
+        }
+        header h1 {
+             font-size: 22px;/*Reduce el tamanio del titulo*/
+        }
+        h2 {
+                font-size: 22px;/*Reduce el tamanio de los titulos de las secciones*/
+        }
+        select {
+                margin: 10px 0;/*Añade espacio arriba y abajo del menu desplegable*/
+        }
+        .cambio:hover {
+                transform: scale(1.05); /*Menos zoom en el movil */
+        }
+
