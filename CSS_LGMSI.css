@@ -6,7 +6,7 @@
             align-items:center;
             justify-content:center;
             padding:10px;
-            flex-wrap: wrap;/* importante para el movil */
+            flex-wrap: wrap;
         }
     /*Titulo de la cabecera */
         header h1 {
@@ -20,7 +20,7 @@
     /*Logo de la página*/
        img {
            margin:20px;
-           max-width: 100%; /* responsive. Anchura máxima */
+           max-width: 100%;
       }
     /*Menu desplegable*/
         select {
@@ -40,9 +40,9 @@
         h2{
             font-family: sans-serif;
             font-size: 30px;
-            font-weight: 700; /* grosor letra*/
+            font-weight: 700;
             color: #111;
-            letter-spacing: 1px; /* espacio entre letras*/
+            letter-spacing: 1px; 
             padding-bottom:15px;
             padding:10px;
        }
@@ -75,7 +75,7 @@
             border: 2px solid #2e7d32;
             margin-right:5px;
             padding:3px 3px;
-            width: 200px;  /* Anchura del input */
+            width: 200px;
         }
     /*Botones de la pagina web */
         button {
@@ -85,13 +85,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;/* Letras en negrita*/
+            font-weight: bold;
             font-family: sans-serif
         }
         
     /*PIE DE PAGINA */
         footer {
-              border-top: 1px solid black;
+              border-top: 2px solid black;
               text-align: center;
               padding: 10px;
               margin-top:10px;
@@ -105,22 +105,22 @@
               font-family: sans-serif
         }
     /*RESPONSIVE */
-        @media (max-width: 600px) { /*Los siguientes estilos se aplicarán cuando la pantalla tenga una anchura max de 600 o menos  */
+        @media (max-width: 600px) {
             
         header {
-              flex-direction: column; /*Elementos en forma de columna*/
-             text-align: center;/*Centra el texto del header*/
-        }
+              flex-direction: column;
+             text-align: center;
+             
         header h1 {
-             font-size: 22px;/*Reduce el tamanio del titulo*/
+             font-size: 22px;
         }
         h2 {
-                font-size: 22px;/*Reduce el tamanio de los titulos de las secciones*/
+                font-size: 22px;
         }
         select {
-                margin: 10px 0;/*Añade espacio arriba y abajo del menu desplegable*/
+                margin: 10px 0;
         }
         .cambio:hover {
-                transform: scale(1.05); /*Menos zoom en el movil */
+                transform: scale(1.05); 
         }
 

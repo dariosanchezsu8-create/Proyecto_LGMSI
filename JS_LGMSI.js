@@ -1,4 +1,4 @@
-﻿    // 1. Función para calcular el IMC
+﻿    // Función para calcular el IMC, controlando los inputs con excepciones
         function calcularIMC() {
             try {
             //Se recogen los datos tipo String para poder hacer el if en caso de que sea =""
@@ -6,9 +6,13 @@
                 const alturaInput = document.getElementById("altura").value;
 
                 // Campos vacíos
-                if (pesoInput === "" || alturaInput === "") {
+                if (pesoInput == "" || alturaInput == "") {
                     throw new Error("Todos los campos son obligatorios");
                   }
+                  //Valores con punto, no con coma
+                  if (pesoInput.includes(",") || alturaInput.includes(",")) {
+                        throw new Error("Usa punto en vez de coma (ej: 70.5 o 1.75)");
+                   }
                   //Se pasa el String a float (decimal)
                       const peso = parseFloat(pesoInput);
                       const altura = parseFloat(alturaInput);
@@ -17,11 +21,15 @@
                         if (isNaN(peso) || isNaN(altura)) {
                             throw new Error("Debes introducir números válidos");
                         }
-
-                        // Valores incorrectos
-                        if (peso <= 0 || altura <= 0) {
-                            throw new Error("Los valores deben ser mayores que 0");
+                        //Valores desorbitados
+                        if (peso <= 0 || peso > 600) {
+                              throw new Error("El peso debe ser un valor lógico en kg (entre 0 y 600).");
                         }
+                        //Control de valores desorbitados
+                        if (altura <= 0 || altura >= 3) {
+                             throw new Error("La altura debe estar en metros y ser un valor lógico (ej: 1.75)");
+                        }
+                        
                         //Caculo del IMC
                             const IMC = peso / (altura * altura);
                         
@@ -48,6 +56,8 @@
 
                           } catch (error) {
                               document.getElementById("resultado").textContent = error.message;
+                              // Reseteamos el color a uno neutro (o el que tengas por defecto)
+                              resultado.style.color = "black";
                           }
                       }
 
@@ -73,6 +83,26 @@
                                 f3.addEventListener("click", function() { cambiarImagen(f3); });
                             }
                             
+                            
+                            
+                              // Esperamos a que la página cargue totalmente
+                                  document.addEventListener("DOMContentLoaded", function() {
+                                  const formulario = document.getElementById("registroForm");
+                              // Escuchamos el evento de envío del formulario
+                                  formulario.addEventListener("submit", function(event) {
+                                  
+                              //Evita que la página se recargue sola
+                                  event.preventDefault();
+                                  
+                                // Ahora ejecutamos tu función original de validación
+                                  Enviar(); 
+                          });
+                                // --- SECCIÓN 2: CALCULADORA IMC ---
+                                    const btnCalcular = document.getElementById("btnCalcular");
+                                    btnCalcular.addEventListener("click", function() {
+                                  calcularIMC();
+                           });
+                });
                           //3. Método para enviar formulario controlado por excepciones
                               function Enviar() {
                               //Se guardan los inputs en variables
@@ -81,7 +111,7 @@
                                   //Casos controlados
                                     try {
                                       //Campo nombre vacio
-                                          if (nombre === "") {
+                                          if (nombre == "") {
                                                 throw "El campo nombre es obligatorio rellenarlo";
                                           }
                                       //Longitud del campo nombre
@@ -89,7 +119,7 @@
                                                 throw "El nombre tiene que contener al menos tres letras.";
                                           }
                                       //Campo email vacio
-                                          if (email === "") {
+                                          if (email == "") {
                                                throw "Es obligatorio rellenar el campo de email";
                                           }
                                       //El campo email debe incluir el arroba
